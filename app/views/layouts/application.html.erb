@@ -1,14 +1,48 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Linkbrary</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-
-<%= yield %>
-
-</body>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <link href="https://fonts.googleapis.com/css?family=Jaldi|League+Script|Montserrat|Playfair+Display+SC|Quintessential" rel="stylesheet">
+  <% if flash[:notice] %>
+    <div class="alert alert-success">
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+      <%= flash[:notice] %>
+    </div>
+  <% elsif flash[:alert] %>
+    <div class="alert alert-warning">
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+      <%= flash[:alert] %>
+    </div>
+  <% end %>
+  <body class="layer1 tpad50">
+    <div>
+      <div class=" afont ht10rem">Linkbrary</div>
+      <div class="wid25per lmar3per headlineb ht10 pull-left posrel rpad25"></div>
+      <div class="wid25per headlineb rmar3per ht10 pull-right posrel lpad25"></div>
+    </div>
+  </div>
+  <div class="dropdown-hover abs tmar15 lmar25">
+    <button class="glyphicon glyphicon-menu-hamburger dropdown-toggle bfont" data-toggle="dropdown"></button>
+    <ul class="dropdown-menu cfont divider lmar10 font2rem">
+      <li role="presentation">
+        <%= link_to "Home", welcome_index_path, class: "tcent cfont" %>
+      </li>
+      <li role="presentation">
+        <%= link_to "Shelves", shelves_path, class: "tcent cfont" %>
+      </li>
+      <li role="presentation">
+        <%= link_to "Settings", edit_user_registration_path, class: "tcent cfont" %>
+      </li>
+      <li role="presentation">
+        <% if user_signed_in? %>
+          <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "tcent cfont" %>
+        <% else %>
+          <%= link_to "Sign Up", new_user_registration_path, class: "tcent cfont"  %>
+        <% end %>
+      </li>
+    </ul>
+  </div>
+    <%= yield %>
+  </body>
 </html>

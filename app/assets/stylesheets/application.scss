@@ -1,0 +1,490 @@
+/*
+* This is a manifest file that'll be compiled into application.css, which will include all the files
+* listed below.
+*
+* Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+* or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+*
+* You're free to add application-wide styles to this file and they'll appear at the bottom of the
+* compiled file so the styles you add here take precedence over styles defined in any styles
+* defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+* file per style scope.
+*
+*= require_tree .
+*= require_self
+*/
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+.layer1 {
+  background-color: lightgray;
+  min-height: 1000px;
+  width: 100%;
+}
+
+.layer2 {
+  background-color: white;
+  opacity: .95;
+  margin-top: 25px;
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-bottom: 20%;
+  min-height: 400px;
+  min-width: 100px;
+  width: 60%;
+  height: auto;
+  position: absolute;
+  text-align: center;
+  padding: 25px;
+}
+
+.headline {
+  border-bottom: 1px solid black;
+  min-width: 50px;
+}
+
+.headlineb {
+  border-top: 1px solid black;
+  min-width: 50px;
+  height: 40%;
+}
+
+.afont {
+  font-family: 'Playfair Display SC', serif;
+  font-size: 7rem;
+  text-align: center;
+}
+
+.bfont {
+  color: black;
+  background-color: lightgray;
+  font-size: 4rem;
+  border: none;
+}
+
+.bfont:hover {
+  text-shadow: -4px 3px white;
+  border: none;
+}
+
+.cfont {
+  font-family: 'Monserrat', cursive;
+  color: black;
+  background-color: white;
+}
+
+.font2rem {
+  font-size: 2rem;
+}
+
+.dfont {
+  font-family: 'Playfair Display SC', serif;
+  color: black;
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.efont {
+
+}
+
+.rmar25 {
+ margin-right: 35px;
+}
+
+.mar10 {
+  margin: 5px;
+}
+.rmar10 {
+ margin-right: 15px;
+}
+
+.rmarneg15 {
+ margin-right: -15px;
+}
+
+.tmar15 {
+ margin-top: 15px;
+}
+
+.tmar25 {
+ margin-top: 25px;
+}
+.tmar125 {
+ margin-top: 125px;
+}
+.tmar150 {
+ margin-top: 150px;
+}
+
+.tmar50 {
+ margin-top: 50px;
+}
+
+.tmar90per {
+ margin-top: 90%;
+ height: 5%;
+ margin-bottom: 5%;
+}
+
+.tmar50per {
+ margin-top: 150px;
+}
+
+.tmar33per {
+ margin-top: 33%;
+}
+
+.bmar15 {
+ margin-bottom: 15px;
+}
+
+.bmar25 {
+ margin-bottom: 25px;
+}
+
+.bmar75 {
+ margin-bottom: 75px;
+}
+
+.lmar15 {
+ margin-left: 15px;
+}
+
+.lmar25 {
+ margin-left: 25px;
+}
+
+.lmar33per {
+ margin-left: 33%;
+}
+
+.lmar100 {
+ margin-left: 100px;
+}
+
+.lmar150 {
+ margin-left: 150px;
+}
+
+.lmar25per {
+ margin-left: 25%;
+}
+
+.lmarneg10 {
+ margin-left: -10px;
+}
+
+.rmar25 {
+ margin-right: 25px;
+}
+
+.lmar10 {
+ margin-left: 10px;
+}
+
+.absolutely {
+ position: absolute;
+}
+
+.lpad25 {
+ padding-left: 25px;
+}
+
+.rpad {
+ padding-right: 10px;
+}
+
+.lpad15 {
+ padding-left: 15px;
+}
+
+.lpad10 {
+ padding-left: 10px;
+}
+
+.lpad3per {
+  padding-left: 3%;
+}
+
+.rpad0 {
+ padding-right: 0px;
+}
+
+.rpad25 {
+ padding-right: 25px;
+}
+
+.tpad25 {
+ padding-top: 25px;
+}
+
+.tpad50 {
+ padding-top: 50px;
+}
+
+.tpad75 {
+ padding-top: 75px;
+}
+
+.bpad25 {
+ padding-bottom: 25px;
+}
+
+.pad25 {
+ padding: 25px;
+}
+
+.mar25 {
+ margin: 50px;
+}
+
+.bmar10per {
+ margin-bottom: 10%;
+}
+
+.tmarneg25 {
+ margin-top: -50px;
+ margin-left: -25px;
+}
+
+.tmar {
+ margin-top: 100px;
+}
+.tmar90 {
+ margin-top: 90px;
+}
+.posfx {
+ position: fixed;
+}
+.wid50{
+ width: 50px;
+ position: relative;
+ float: right;
+}
+.rmar60per {
+   margin-right: 60%
+}
+.fl {
+ position: relative;
+ float: left;
+}
+.abs {
+ position: absolute;
+}
+
+.rmar25 {
+ margin-right: 35px;
+}
+
+.rmar10 {
+ margin-right: 15px;
+}
+
+.rmarneg15 {
+ margin-right: -15px;
+}
+
+.tmar15 {
+ margin-top: 15px;
+}
+
+.tmar25 {
+ margin-top: 25px;
+}
+.tmar125 {
+ margin-top: 125px;
+}
+.tmar150 {
+ margin-top: 150px;
+}
+
+.tmar50 {
+ margin-top: 50px;
+}
+
+.tmar90per {
+ margin-top: 90%;
+ height: 5%;
+ margin-bottom: 5%;
+}
+
+.tmar50per {
+ margin-top: 150px;
+}
+
+.tmar33per {
+ margin-top: 33%;
+}
+
+.bmar15 {
+ margin-bottom: 15px;
+}
+
+.bmar25 {
+ margin-bottom: 25px;
+}
+
+.bmar75 {
+ margin-bottom: 75px;
+}
+
+.lmar15 {
+ margin-left: 15px;
+}
+
+.lmar25 {
+ margin-left: 25px;
+}
+
+.lmar33per {
+ margin-left: 33%;
+}
+
+.lmar100 {
+ margin-left: 100px;
+}
+
+.lmar150 {
+ margin-left: 150px;
+}
+
+.lmar25per {
+ margin-left: 25%;
+}
+
+.lmarneg10 {
+ margin-left: -10px;
+}
+
+.rmar25 {
+ margin-right: 25px;
+}
+
+.lmar10 {
+ margin-left: 10px;
+}
+
+.lpad25 {
+ padding-left: 25px;
+}
+
+.rpad {
+ padding-right: 10px;
+}
+
+.lpad15 {
+ padding-left: 15px;
+}
+
+.lpad10 {
+ padding-left: 10px;
+}
+
+.rpad0 {
+ padding-right: 0px;
+}
+
+.rpad25 {
+ padding-right: 25px;
+}
+
+.tpad25 {
+ padding-top: 25px;
+}
+
+.tpad50 {
+ padding-top: 50px;
+}
+
+.tpad75 {
+ padding-top: 75px;
+}
+
+.bpad25 {
+ padding-bottom: 25px;
+}
+
+.pad25 {
+ padding: 25px;
+}
+
+.mar25 {
+ margin: 50px;
+}
+
+.wid30per {
+ width: 30%;
+}
+
+.wid25per {
+  width: 25%;
+}
+
+.lmar3per {
+ margin-left: 3%;
+}
+
+.rmar3per {
+ margin-right: 3%;
+}
+
+.lmar3per {
+ margin-left: 3%;
+}
+
+.bmar10per {
+ margin-bottom: 10%;
+}
+
+.tmarneg25 {
+ margin-top: -50px;
+ margin-left: -25px;
+}
+
+.tmar {
+ margin-top: 100px;
+}
+.tmar90 {
+ margin-top: 90px;
+}
+.posfx {
+ position: fixed;
+}
+.wid50{
+ width: 50px;
+ position: relative;
+ float: right;
+}
+
+.ht100 {
+  height: 100px;
+}
+
+.ht10 {
+  height: 10px;
+}
+
+.ht10rem {
+  height: 10rem;
+}
+
+.rmar60per {
+   margin-right: 60%
+}
+.fl {
+ position: relative;
+ float: left;
+}
+.abs {
+ position: absolute;
+}
+
+.posrel {
+  position: relative;
+}
+
+.tcent {
+  text-align: center;
+}
