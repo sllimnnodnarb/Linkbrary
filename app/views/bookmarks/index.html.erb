@@ -1,29 +1,26 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Listing Bookmarks</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Url</th>
-      <th>Shelf</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @bookmarks.each do |bookmark| %>
+<div class="layer2 shadow tmar90">
+  <p id="notice"><%= notice %></p>
+  <h1 class="bmar25 bpad25 bline cfont">Listing Bookmarks</h1>
+  <table>
+    <thead>
       <tr>
-        <td><%= bookmark.url %></td>
-        <td><%= bookmark.shelf %></td>
-        <td><%= link_to 'Show', bookmark %></td>
-        <td><%= link_to 'Edit', edit_bookmark_path(bookmark) %></td>
-        <td><%= link_to 'Destroy', bookmark, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Url</th>
+        <th>Shelf</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Bookmark', new_bookmark_path %>
+    </thead>
+    <tbody>
+      <% @bookmarks.each do |bookmark| %>
+        <tr>
+          <td><%= bookmark.url %></td>
+          <td><%= bookmark.shelf %></td>
+          <td><%= link_to 'Show', bookmark %></td>
+          <td><%= link_to 'Edit', edit_bookmark_path(bookmark) %></td>
+          <td><%= link_to 'Destroy', bookmark, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <br>
+  <%= link_to 'New Bookmark', new_bookmark_path %>
+</div>

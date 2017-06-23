@@ -71,22 +71,83 @@
 .cfont {
   font-family: 'Monserrat', cursive;
   color: black;
+  text-decoration: none;
+}
+
+.cfont:hover {
+  text-decoration: none;
   background-color: white;
 }
 
+.dfont {
+  color: black;
+  text-decoration: none;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.dfont:hover {
+  color: black;
+  text-decoration: none;
+  text-shadow: 3px 3px lightgray;
+}
+
+.efont {
+  color: black;
+  font-size: 3rem;
+  font-weight: bold;
+  background-color: white;
+  text-decoration: none;
+}
+
+.efont:hover {
+  color: #4d4d4d;
+  background-color: white;
+  text-decoration: none;
+  text-shadow: 2px 2px lightgray;
+}
+
+.efont:visited {
+  color: black;
+  background-color: white;
+  text-decoration: none;
+}
+
+.ffont {
+  color: black;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.font1rem {
+  font-size: 1rem;
+}
+
+.nodec {
+  text-decoration: none;
+  background-color: white;
+  color: black;
+}
+
+.nodec:hover {
+  text-decoration: none;
+  background-color: white;
+  color: black;
+}
+
+
+.font1point5rem {
+  font-size: 1.5rem;
+}
 .font2rem {
   font-size: 2rem;
 }
 
-.dfont {
-  font-family: 'Playfair Display SC', serif;
-  color: black;
+.font3rem {
   font-size: 3rem;
-  font-weight: bold;
 }
 
-.efont {
-
+.font4rem {
+  font-size: 4rem;
 }
 
 .rmar25 {
@@ -236,6 +297,10 @@
  padding: 25px;
 }
 
+.pad50 {
+  padding: 50px;
+}
+
 .mar25 {
  margin: 50px;
 }
@@ -394,6 +459,18 @@
  padding-top: 25px;
 }
 
+.tpad3 {
+  padding-top: 3px;
+}
+
+.tpad10 {
+  padding-top: 10px;
+}
+
+.tpad15 {
+  padding-top: 15px;
+}
+
 .tpad50 {
  padding-top: 50px;
 }
@@ -487,4 +564,18 @@
 
 .tcent {
   text-align: center;
+}
+
+.bline {
+  border-bottom: 1px solid lightgray;
+}
+
+.wid100per {
+  width: 100%;
+}
+
+.shadow {
+   -moz-box-shadow:    inset 0 0 10px #000000;
+   -webkit-box-shadow: inset 0 0 10px #000000;
+   box-shadow:         inset 0 0 25px #000000;
 }

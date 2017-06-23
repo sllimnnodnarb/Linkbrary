@@ -45,7 +45,6 @@ module CarouselHelper
       options = {
         class: (is_active ? 'item active' : 'item'),
       }
-
       content_tag(:div, shelf_path(shelf), options)
     end
 

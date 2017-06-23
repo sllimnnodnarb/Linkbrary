@@ -17,7 +17,8 @@ class ShelvesController < ApplicationController
 
   def create
     @shelf = Shelf.new(shelf_params)
-
+    @shelf_carousel = []
+    @shelf_carousel << @shelf
     respond_to do |format|
       if @shelf.save
         format.html { redirect_to @shelf, notice: 'Shelf was successfully created.' }

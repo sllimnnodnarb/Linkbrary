@@ -1,16 +1,13 @@
-<div class="layer2">
+<div class="layer2 shadow tmar90">
   <p id="notice"><%= notice %></p>
-
   <p>
     <strong>Title:</strong>
     <%= @shelf.title %>
   </p>
-
   <p>
     <strong>User:</strong>
     <%= @shelf.user %>
   </p>
-
   <%= link_to 'Edit', edit_shelf_path(@shelf) %> |
   <%= link_to 'Back', shelves_path %>
 </div>

@@ -1,26 +1,26 @@
-<div class="layer2">
+<div class="layer2 tmar90 shadow pad50">
   <p id="notice"><%= notice %></p>
-  <h1 class="dfont">My Shelves</h1>
-  <table>
+  <h1 class="cfont">My Shelves</h1>
+  <table class="wid100per">
     <thead>
       <tr>
-        <th>Title</th>
-        <th>User</th>
-        <th colspan="3"></th>
+        <th class="bline font2rem">Title</th>
       </tr>
     </thead>
+    <br>
     <tbody>
+      <td class="efont"><%= link_to '', new_shelf_path, class: "glyphicon glyphicon-plus pull-left efont font2rem tmar15 bmar15" %></td>
       <% @shelves.each do |shelf| %>
-        <tr>
-          <td><%= shelf.title %></td>
-          <td><%= shelf.user %></td>
-          <td><%= link_to 'Show', shelf %></td>
-          <td><%= link_to 'Edit', edit_shelf_path(shelf) %></td>
-          <td><%= link_to 'Destroy', shelf, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        </tr>
+      <tr class="tmar15">
+        <td class="pull-left tmar15 efont"><%= link_to '', shelf, class: "efont font2rem rpad25 glyphicon glyphicon-list" %></td>
+        <td class="pull-left mar15 efont font1point5rem tmar15 tpad3"><%= shelf.title %></td>
+        <td class="pull-right font2rem tmar15"><%= link_to '', shelf, method: :delete, data: { confirm: 'Are you sure?' }, class: "glyphicon glyphicon-trash font2rem nodec" %></td>
+        <td class="pull-right efont font2rem tmar15"><%= link_to '', edit_shelf_path(shelf), class: "rpad25 efont glyphicon glyphicon-pencil font2rem " %></td>
+      </tr>
       <% end %>
     </tbody>
   </table>
+  <div class="bline tmar50">
+  </div>
   <br>
-  <%= link_to 'New Shelf', new_shelf_path %>
 </div>
