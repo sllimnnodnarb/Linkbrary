@@ -6,6 +6,7 @@ class ShelvesController < ApplicationController
   end
 
   def show
+    @shelf = Shelf.find(params[:id])
   end
 
   def new

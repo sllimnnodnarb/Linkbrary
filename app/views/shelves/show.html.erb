@@ -1,13 +1,27 @@
-<div class="layer2 shadow tmar90">
-  <p id="notice"><%= notice %></p>
-  <p>
-    <strong>Title:</strong>
-    <%= @shelf.title %>
-  </p>
-  <p>
-    <strong>User:</strong>
-    <%= @shelf.user %>
-  </p>
-  <%= link_to 'Edit', edit_shelf_path(@shelf) %> |
-  <%= link_to 'Back', shelves_path %>
+<div class="layer2 tmar90 shadow pad50">
+
+  <h1 class="cfont"><%= @shelf.title %></h1>
+  <table class="wid100per">
+    <thead>
+      <tr>
+        <th class="bline font2rem">Title</th>
+      </tr>
+    </thead>
+    <br>
+    <tbody>
+      <td class="efont"><%= link_to '', new_bookmark_path, class: "glyphicon glyphicon-plus pull-left efont font2rem tmar15 bmar15" %></td>
+      <% @shelf.bookmarks.each do |bookmark| %>
+      <tr class="tmar15 maxwid100">
+        <td class="pull-left tmar15 efont font2rem maxwid100"><%= link_to(bookmark.url, bookmark, class: "efont font2rem") %></td>
+        <td class="pull-right font2rem tmar15"><%= link_to '', bookmark, method: :delete, data: { confirm: 'Are you sure?' }, class: "glyphicon glyphicon-trash font2rem nodec" %></td>
+        <td class="pull-right efont font2rem tmar15 maxwid100"><%= link_to '', edit_bookmark_path(bookmark), class: "rpad25 efont glyphicon glyphicon-pencil font2rem " %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <div class="bline tmar50">
+  </div>
+    <%= link_to 'Back', shelf_path, class: "efont font2rem tcent pull-left tmar15 posrel" %>
+    <%= link_to '', root_path, class: "glyphicon glyphicon-home gfont font2rem tmar25 tcent" %>
+  <br>
 </div>

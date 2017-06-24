@@ -1,31 +1,25 @@
 class ShelfsController < ApplicationController
   before_action :set_shelf, only: [:show, :edit, :update, :destroy]
 
-  # GET /shelves
-  # GET /shelves.json
   def index
     @shelves = Shelf.all
   end
 
-  # GET /shelves/1
-  # GET /shelves/1.json
   def show
+    @shelf = Shelf.find(params[:id])
   end
 
-  # GET /shelves/new
   def new
     @shelf = Shelf.new
   end
 
-  # GET /shelves/1/edit
   def edit
   end
 
-  # POST /shelves
-  # POST /shelves.json
   def create
     @shelf = Shelf.new(shelf_params)
-
+    @shelf_carousel = []
+    @shelf_carousel << @shelf
     respond_to do |format|
       if @shelf.save
         format.html { redirect_to @shelf, notice: 'Shelf was successfully created.' }
@@ -37,8 +31,6 @@ class ShelfsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /shelves/1
-  # PATCH/PUT /shelves/1.json
   def update
     respond_to do |format|
       if @shelf.update(shelf_params)
@@ -51,8 +43,6 @@ class ShelfsController < ApplicationController
     end
   end
 
-  # DELETE /shelves/1
-  # DELETE /shelves/1.json
   def destroy
     @shelf.destroy
     respond_to do |format|
@@ -69,6 +59,7 @@ class ShelfsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def shelf_params
-      params.fetch(:shelf, {})
+      #params.fetch(:shelf, {})
+      params.require(:shelf).permit(:title, :user_id)
     end
 end

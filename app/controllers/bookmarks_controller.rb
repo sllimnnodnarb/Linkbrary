@@ -1,11 +1,12 @@
 class BookmarksController < ApplicationController
-  before_action :set_bookmark, only: [:show, :edit, :update, :destroy]
+  before_action :set_bookmark, only: [:show, :edit, :update, :destroy, :get]
 
   # GET /bookmarks
   # GET /bookmarks.json
   def index
     @bookmarks = Bookmark.all
-    @bookmark = Bookmark.find(params[:id])
+    @bookmark = Bookmark.find(params[:shelf_id])
+    @bookmark_url = Shelf.Bookmark.find(params[:url])
   end
 
   # GET /bookmarks/1

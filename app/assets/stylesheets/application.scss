@@ -113,9 +113,30 @@
 }
 
 .ffont {
-  color: black;
+  color: darkgray;
   font-size: 1.5rem;
   font-weight: bold;
+}
+
+.gfont {
+  color: darkgray;
+  font-size: 3rem;
+  font-weight: bold;
+  background-color: white;
+  text-decoration: none;
+}
+
+.gfont:hover {
+  color: #4d4d4d;
+  background-color: white;
+  text-decoration: none;
+  text-shadow: 2px 2px black;
+}
+
+.gfont:visited {
+  color: darkgray;
+  background-color: white;
+  text-decoration: none;
 }
 
 .font1rem {
@@ -365,6 +386,10 @@
  margin-top: 150px;
 }
 
+.tmar75 {
+  margin-top: 75px;
+}
+
 .tmar50 {
  margin-top: 50px;
 }
@@ -479,6 +504,14 @@
  padding-top: 75px;
 }
 
+.tpad40 {
+  padding-top: 40px;
+}
+
+.tpad30 {
+  padding-top: 40px;
+}
+
 .bpad25 {
  padding-bottom: 25px;
 }
@@ -570,8 +603,17 @@
   border-bottom: 1px solid lightgray;
 }
 
+.tline {
+  border-top: 1px solid lightgray;
+}
+
 .wid100per {
   width: 100%;
+}
+
+.maxwid100 {
+  max-width: 100%;
+  overflow: hidden;
 }
 
 .shadow {
