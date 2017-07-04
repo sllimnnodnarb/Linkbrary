@@ -9,19 +9,19 @@
     </thead>
     <br>
     <tbody>
-      <td class="efont"><%= link_to '', new_bookmark_path, class: "glyphicon glyphicon-plus pull-left efont font2rem tmar15 bmar15" %></td>
+      <td class="efont"><%= link_to '', new_shelf_bookmark_path(@shelf), class: "glyphicon glyphicon-plus pull-left efont font2rem tmar15 bmar15" %></td>
       <% @shelf.bookmarks.each do |bookmark| %>
-      <tr class="tmar15 maxwid100">
-        <td class="pull-left tmar15 efont font2rem maxwid100"><%= link_to(bookmark.url, bookmark, class: "efont font2rem") %></td>
-        <td class="pull-right font2rem tmar15"><%= link_to '', bookmark, method: :delete, data: { confirm: 'Are you sure?' }, class: "glyphicon glyphicon-trash font2rem nodec" %></td>
-        <td class="pull-right efont font2rem tmar15 maxwid100"><%= link_to '', edit_bookmark_path(bookmark), class: "rpad25 efont glyphicon glyphicon-pencil font2rem " %></td>
-      </tr>
+        <tr class="tmar15 maxwid100">
+          <td class="pull-left tmar15 efont font2rem maxwid100"><%= link_to bookmark.url, bookmark.url, class: "efont font2rem", target: '_new' %></td>
+          <td class="pull-right font2rem tmar15 efont"><%= link_to '', [@shelf, bookmark], method: :delete, data: { confirm: 'Are you sure?' }, class: "glyphicon glyphicon-trash font2rem gfont" %></td>
+          <td class="pull-right efont font2rem tmar15 maxwid100"><%= link_to '', edit_shelf_bookmark_path(@shelf, bookmark), class: "rpad25 efont glyphicon glyphicon-pencil font2rem" %></td>
+        </tr>
       <% end %>
     </tbody>
   </table>
   <div class="bline tmar50">
   </div>
     <%= link_to 'Back', shelf_path, class: "efont font2rem tcent pull-left tmar15 posrel" %>
-    <%= link_to '', root_path, class: "glyphicon glyphicon-home gfont font2rem tmar25 tcent" %>
+    <%= link_to '', root_path, class: "glyphicon glyphicon-home gfont font2rem tmar25" %>
   <br>
 </div>

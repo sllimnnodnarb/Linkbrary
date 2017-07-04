@@ -6,6 +6,7 @@ class ShelfsController < ApplicationController
   end
 
   def show
+    @shelf_carousel = Shelf.last(4)
     @shelf = Shelf.find(params[:id])
   end
 
@@ -18,8 +19,6 @@ class ShelfsController < ApplicationController
 
   def create
     @shelf = Shelf.new(shelf_params)
-    @shelf_carousel = []
-    @shelf_carousel << @shelf
     respond_to do |format|
       if @shelf.save
         format.html { redirect_to @shelf, notice: 'Shelf was successfully created.' }
@@ -54,12 +53,12 @@ class ShelfsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_shelf
-      @shelf = Shelf.find(params[:id])
+      @shelf = Shelf.find(params[:shelf_id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def shelf_params
       #params.fetch(:shelf, {})
-      params.require(:shelf).permit(:title, :user_id)
+      params.require(:shelf).permit(:title, :shelf_id)
     end
 end

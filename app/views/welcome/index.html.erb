@@ -1,3 +1,12 @@
 <div class="layer2 shadow tmar90">
-  <%= carousel_for(@Shelves) %>
+      <h1 class="cfont bline">Shelves</h1>
+  <div class="tmar50">
+    <div class="owl-carousel bmar75">
+      <% @shelves.each do |shelf| %>
+      <div class="owl-item bmar75">
+        <%= link_to shelf.title, shelf, class: "efont font5rem" %>
+      </div><br>
+      <% end %>
+    </div>
+  </div>
 </div>

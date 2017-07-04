@@ -12,6 +12,8 @@
 *
 *= require_tree .
 *= require_self
+*= require owl.carousel
+*= require owl.theme
 */
 
 @import "bootstrap-sprockets";
@@ -171,6 +173,10 @@
   font-size: 4rem;
 }
 
+.font5rem {
+  font-size: 5rem;
+}
+
 .rmar25 {
  margin-right: 35px;
 }
@@ -254,12 +260,24 @@
  margin-left: 25%;
 }
 
+.lmar50per {
+ margin-left: 50%;
+}
+
 .lmarneg10 {
  margin-left: -10px;
 }
 
 .rmar25 {
  margin-right: 25px;
+}
+
+.rmar50per {
+ margin-right: 50%;
+}
+
+.rmar150 {
+ margin-right: 150px;
 }
 
 .lmar10 {
@@ -296,6 +314,10 @@
 
 .rpad25 {
  padding-right: 25px;
+}
+
+.rpad50per {
+ padding-right: 50%;
 }
 
 .tpad25 {
@@ -566,6 +588,10 @@
  width: 50px;
  position: relative;
  float: right;
+}
+
+.wid200 {
+  width: 200px;
 }
 
 .ht100 {

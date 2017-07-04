@@ -1,38 +1,24 @@
 class BookmarksController < ApplicationController
-  before_action :set_bookmark, only: [:show, :edit, :update, :destroy, :get]
+  before_action :set_bookmark, except: [:index, :new, :create]
+  before_action :set_shelf
 
-  # GET /bookmarks
-  # GET /bookmarks.json
   def index
     @bookmarks = Bookmark.all
-    @bookmark = Bookmark.find(params[:shelf_id])
-    @bookmark_url = Shelf.Bookmark.find(params[:url])
   end
 
-  # GET /bookmarks/1
-  # GET /bookmarks/1.json
-  def show
-    @bookmarks = Bookmark.all
-    @bookmark = Bookmark.find(params[:id])
-  end
-
-  # GET /bookmarks/new
   def new
     @bookmark = Bookmark.new
   end
 
-  # GET /bookmarks/1/edit
   def edit
   end
 
-  # POST /bookmarks
-  # POST /bookmarks.json
   def create
-    @bookmark = Bookmark.new(bookmark_params)
+    @bookmark = @shelf.bookmarks.new(bookmark_params)
 
     respond_to do |format|
       if @bookmark.save
-        format.html { redirect_to @bookmark, notice: 'Bookmark was successfully created.' }
+        format.html { redirect_to @shelf, notice: 'Bookmark was successfully created.' }
         format.json { render :show, status: :created, location: @bookmark }
       else
         format.html { render :new }
@@ -41,12 +27,12 @@ class BookmarksController < ApplicationController
     end
   end
 
-  # PATCH/PUT /bookmarks/1
-  # PATCH/PUT /bookmarks/1.json
   def update
+    @bookmark.assign_attributes(bookmark_params)
+
     respond_to do |format|
       if @bookmark.update(bookmark_params)
-        format.html { redirect_to @bookmark, notice: 'Bookmark was successfully updated.' }
+        format.html { redirect_to [@shelf, @bookmark], notice: 'Bookmark was successfully updated.' }
         format.json { render :show, status: :ok, location: @bookmark }
       else
         format.html { render :edit }
@@ -55,24 +41,29 @@ class BookmarksController < ApplicationController
     end
   end
 
-  # DELETE /bookmarks/1
-  # DELETE /bookmarks/1.json
   def destroy
     @bookmark.destroy
     respond_to do |format|
-      format.html { redirect_to bookmarks_url, notice: 'Bookmark was successfully destroyed.' }
+      format.html { redirect_to @shelf, notice: 'Bookmark was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
+
     def set_bookmark
       @bookmark = Bookmark.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
+    def set_shelf
+      @shelf = Shelf.find(params[:shelf_id])
+    end
+
     def bookmark_params
       params.require(:bookmark).permit(:url, :shelf_id)
+    end
+
+    def shelf_params
+      params.require(:shelf).permit(:title, :user_id)
     end
 end

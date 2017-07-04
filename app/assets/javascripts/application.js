@@ -15,6 +15,7 @@
 //= require turbolinks
 //= require bootstrap
 //= require_tree .
+//= require owl.carousel
 
 
 //var eyenylitics = {};
@@ -43,3 +44,6 @@
     //eyenylitics.report("Viewed Home Page")
   //});
 //});
+$(document).ready(function(){
+  $('.owl-carousel').owlCarousel();
+});
