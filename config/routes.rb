@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  get 'incoming_controller/create'
+  post :incoming, to: 'incoming#create'
+
   resources :shelves do
     resources :bookmarks
   end

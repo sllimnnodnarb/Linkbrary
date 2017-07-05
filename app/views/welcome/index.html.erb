@@ -1,12 +1,14 @@
 <div class="layer2 shadow tmar90">
       <h1 class="cfont bline">Shelves</h1>
   <div class="tmar50">
-    <div class="owl-carousel bmar75">
+    <div class="owl-carousel">
       <% @shelves.each do |shelf| %>
       <div class="owl-item bmar75">
-        <%= link_to shelf.title, shelf, class: "efont font5rem" %>
+        <%= link_to shelf.title, shelf, class: "efont font5rem rline" %>
       </div><br>
       <% end %>
+    </div>
+    <div class="tline bmar25">
     </div>
   </div>
 </div>
