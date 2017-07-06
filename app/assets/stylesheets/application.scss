@@ -181,9 +181,14 @@
  margin-right: 35px;
 }
 
-.mar10 {
-  margin: 5px;
+.rmar25 {
+ margin-right: 35px;
 }
+
+.rmar50 {
+  margin: 50px;
+}
+
 .rmar10 {
  margin-right: 15px;
 }
@@ -294,6 +299,10 @@
 
 .rpad {
  padding-right: 10px;
+}
+
+.rpad50 {
+ padding-right: 50px;
 }
 
 .lpad15 {
@@ -558,6 +567,10 @@
  margin-left: 3%;
 }
 
+.lmar75 {
+  margin-left: 75px;
+}
+
 .rmar3per {
  margin-right: 3%;
 }
@@ -578,12 +591,18 @@
 .tmar {
  margin-top: 100px;
 }
+
 .tmar90 {
  margin-top: 90px;
+}
+
+.tmar75per {
+ margin-top: 75%;
 }
 .posfx {
  position: fixed;
 }
+
 .wid50{
  width: 50px;
  position: relative;
@@ -629,14 +648,17 @@
   border-bottom: 1px solid lightgray;
 }
 
+.bline2 {
+  border-bottom: 1px solid black;
+}
+
 .tline {
   border-top: 1px solid lightgray;
 }
 
 .rline {
   border-right: 1px solid lightgray;
-  padding-right: 50px;
-  padding-left: 50px;
+  padding-right: 75px;
   height: 100px;
 }
 

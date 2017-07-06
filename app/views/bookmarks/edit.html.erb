@@ -1,6 +1,6 @@
 <div class="layer2 shadow tmar90">
   <h1 class="bmar25 bpad25 bline cfont">Editing Bookmark</h1>
   <%= render 'form' %>
-  <%= link_to 'Show', @bookmark %> |
-  <%= link_to 'Back', bookmarks_path %>
+  <%= link_to 'Show', [@shelf, @bookmark] %> |
+  <%= link_to 'Back', shelf_bookmarks_path %>
 </div>

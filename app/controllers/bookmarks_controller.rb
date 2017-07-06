@@ -11,10 +11,13 @@ class BookmarksController < ApplicationController
   end
 
   def edit
+    @bookmark = Bookmark.find(params[:id])
+
   end
 
   def create
     @bookmark = @shelf.bookmarks.new(bookmark_params)
+    @bookmark.user = current_user
 
     respond_to do |format|
       if @bookmark.save

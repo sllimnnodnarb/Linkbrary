@@ -14,13 +14,13 @@
         <tr>
           <td><%= bookmark.url %></td>
           <td><%= bookmark.shelf %></td>
-          <td><%= link_to 'Show', bookmark %></td>
-          <td><%= link_to 'Edit', edit_bookmark_path(bookmark) %></td>
-          <td><%= link_to 'Destroy', bookmark, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to 'Show', [@shelf, bookmark] %></td>
+          <td><%= link_to 'Edit', edit_shelf_bookmark_path(@shelf, bookmark) %></td>
+          <td><%= link_to 'Destroy', [@shelf, bookmark], method: :delete, data: { confirm: 'Are you sure?' } %></td>
         </tr>
       <% end %>
     </tbody>
   </table>
   <br>
-  <%= link_to 'New Bookmark', new_bookmark_path %>
+  <%= link_to 'New Bookmark', new_shelf_bookmark_path(@shelf) %>
 </div>
