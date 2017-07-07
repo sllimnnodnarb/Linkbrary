@@ -19,7 +19,7 @@ class BookmarksController < ApplicationController
 
   def create
     @bookmark = @shelf.bookmarks.new(bookmark_params)
-    #@bookmark.user = current_user
+    @bookmark.user = current_user
 
     respond_to do |format|
       if @bookmark.save
