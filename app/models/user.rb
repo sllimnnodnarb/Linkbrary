@@ -12,4 +12,5 @@ class User < ActiveRecord::Base
   end
 
   has_many :shelves
+  has_many :bookmarks
 end

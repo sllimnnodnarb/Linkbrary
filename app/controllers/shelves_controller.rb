@@ -1,5 +1,7 @@
 class ShelvesController < ApplicationController
   before_action :set_shelf, only: [:show, :edit, :update, :destroy]
+  skip_before_action :verify_authenticity_token, only: [:create, :destroy]
+  skip_before_action :authenticate_user!
 
   def index
     @shelves = Shelf.all
@@ -18,8 +20,6 @@ class ShelvesController < ApplicationController
 
   def create
     @shelf = Shelf.new(shelf_params)
-    @shelf_carousel = []
-    @shelf_carousel << @shelf
     respond_to do |format|
       if @shelf.save
         format.html { redirect_to @shelf, notice: 'Shelf was successfully created.' }

@@ -13,7 +13,7 @@
       <% @shelf.bookmarks.each do |bookmark| %>
         <tr class="tmar15 maxwid100">
           <td class="pull-left tmar15 efont font2rem maxwid100"><%= link_to bookmark.url, bookmark.url, class: "efont font2rem", target: '_new' %></td>
-          <% if [@shelf.user, bookmark] == current_user %>
+          <% if @shelf.user == current_user %>
             <td class="pull-right font2rem tmar15 efont"><%= link_to '', [@shelf, bookmark], method: :delete, data: { confirm: 'Are you sure?' }, class: "glyphicon glyphicon-trash font2rem gfont" %></td>
             <td class="pull-right efont font2rem tmar15 maxwid100"><%= link_to '', edit_shelf_bookmark_path(@shelf, bookmark), class: "rpad25 efont glyphicon glyphicon-pencil font2rem" %></td>
           <% end %>

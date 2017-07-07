@@ -1,6 +1,8 @@
 class BookmarksController < ApplicationController
   before_action :set_bookmark, except: [:index, :new, :create]
   before_action :set_shelf
+  skip_before_action :verify_authenticity_token, only: [:create]
+  skip_before_action :authenticate_user!
 
   def index
     @bookmarks = Bookmark.all
@@ -17,7 +19,7 @@ class BookmarksController < ApplicationController
 
   def create
     @bookmark = @shelf.bookmarks.new(bookmark_params)
-    @bookmark.user = current_user
+    #@bookmark.user = current_user
 
     respond_to do |format|
       if @bookmark.save

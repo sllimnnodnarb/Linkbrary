@@ -3,5 +3,6 @@ class WelcomeController < ApplicationController
 
   def index
     @shelves = Shelf.all
+    @user = current_user
   end
 end

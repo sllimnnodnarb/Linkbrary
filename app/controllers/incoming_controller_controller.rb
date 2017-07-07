@@ -6,15 +6,11 @@ class IncomingControllerController < ApplicationController
   def create
     @user = User.find_by(email: params[:sender])
     if @user
-      @topic = Topic.find_or_create_by(title: params[:subject])
+      @shelf = Shelf.find_or_create_by(title: params[:subject])
       @url = params["stripped-text"]
-      #"body-plain"
 
-      @bookmark = @topic.bookmarks.new(
-        url: @url,
-        user: @user
-      )
-      @bookmark.save
+      @bookmark = @shelf.bookmarks.find_or_create_by(url: @url)
+
       head 200
     else
       head 404
