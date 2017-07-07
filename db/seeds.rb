@@ -1,7 +1,8 @@
 1.times do
   user = User.create!(
     email: Faker::Internet.email,
-    password: Faker::Internet.password(8)
+    password: Faker::Internet.password(8),
+    role: 'member'
   )
   user.update_attributes!(confirmed_at: Time.now)
 end

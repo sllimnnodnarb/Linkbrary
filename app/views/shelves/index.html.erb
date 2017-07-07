@@ -12,10 +12,10 @@
       <% @shelves.each do |shelf| %>
       <tr class="tmar15">
         <td class="pull-left tmar15 efont"><%= link_to shelf.title, shelf, class: "efont font2rem rpad25" %></td>
-        <% if current_user.email == shelf.user %>
-          <td class="pull-right font2rem tmar15"><%= link_to '', shelf, method: :delete, data: { confirm: 'Are you sure?' }, class: "glyphicon glyphicon-trash font2rem nodec" %></td>
-          <td class="pull-right efont font2rem tmar15"><%= link_to '', edit_shelf_path(shelf), class: "rpad25 efont glyphicon glyphicon-pencil font2rem " %></td>
-        <% end %>
+          <% if user_is_authorized_for_shelves?(shelf) %>
+            <td class="pull-right font2rem tmar15"><%= link_to '', shelf, method: :delete, data: { confirm: 'Are you sure?' }, class: "glyphicon glyphicon-trash font2rem nodec" %></td>
+            <td class="pull-right efont font2rem tmar15"><%= link_to '', edit_shelf_path(shelf), class: "rpad25 efont glyphicon glyphicon-pencil font2rem " %></td>
+          <% end %>
         <tr>
           <td class="pull-left tmar15">
             <small>

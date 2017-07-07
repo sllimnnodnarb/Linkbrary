@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
 
   before_save { self.email = email.downcase }
+  before_save { self.role ||= :member }
 
   def avatar_url(size)
      gravatar_id = Digest::MD5::hexdigest(self.email).downcase
@@ -13,4 +14,6 @@ class User < ActiveRecord::Base
 
   has_many :shelves
   has_many :bookmarks
+
+  enum role: [:member, :admin]
 end

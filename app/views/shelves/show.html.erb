@@ -12,9 +12,9 @@
       <td class="efont"><%= link_to '', new_shelf_bookmark_path(@shelf), class: "glyphicon glyphicon-plus pull-left efont font2rem tmar15 bmar15" %></td>
       <% @shelf.bookmarks.each do |bookmark| %>
         <tr class="tmar15 maxwid100">
-          <td class="pull-left tmar15 efont font2rem maxwid100"><%= link_to bookmark.url, bookmark.url, class: "efont font2rem", target: '_new' %></td>
-          <% if @shelf.user == current_user %>
-            <td class="pull-right font2rem tmar15 efont"><%= link_to '', [@shelf, bookmark], method: :delete, data: { confirm: 'Are you sure?' }, class: "glyphicon glyphicon-trash font2rem gfont" %></td>
+          <td class="pull-left tmar15 efont font2rem maxwid100"><%= link_to bookmark.url, bookmark.url, class: "efont font2rem bmar25 tmar15", target: '_new' %></td>
+          <% if user_is_authorized_for_bookmarks?(@shelf, bookmark) %>
+            <td class="pull-right font2rem tmar15 efont"><%= link_to '', [@shelf, bookmark], method: :delete, data: { confirm: 'Are you sure?' }, class: "glyphicon glyphicon-trash font2rem gfont bmar15" %></td>
             <td class="pull-right efont font2rem tmar15 maxwid100"><%= link_to '', edit_shelf_bookmark_path(@shelf, bookmark), class: "rpad25 efont glyphicon glyphicon-pencil font2rem" %></td>
           <% end %>
         </tr>
@@ -23,7 +23,7 @@
   </table>
   <div class="bline tmar50">
   </div>
-    <%= link_to 'Back', shelf_path, class: "efont font2rem tcent pull-left tmar15 posrel" %>
+    <%= link_to 'Back', shelves_path, class: "efont font2rem tcent pull-left tmar15 posrel" %>
     <%= link_to '', root_path, class: "glyphicon glyphicon-home gfont font2rem tmar25" %>
   <br>
 </div>
