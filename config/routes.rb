@@ -1,19 +1,20 @@
 Rails.application.routes.draw do
 
-  get 'likes/index'
-
-  devise_for :users
   devise_for :admins
-
-  get 'incoming_controller/create'
-  post :incoming, to: 'incoming#create'
+  devise_for :users
+  resources :users, only: [:show]
 
   resources :shelves do
-    resources :bookmarks do
-      resources :likes
-    end
+    resources :bookmarks, except: [:index]
   end
 
+  resources :bookmarks do
+    resources :likes, only: [:index, :create, :destroy]
+end
+
+  get 'likes/index'
+  get 'incoming_controller/create'
+  post :incoming, to: 'incoming#create'
   get 'welcome/index'
   get 'welcome/about'
   root 'welcome#index'

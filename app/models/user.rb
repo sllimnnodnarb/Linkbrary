@@ -16,8 +16,8 @@ class User < ActiveRecord::Base
 
   enum role: [:member, :admin]
 
-  def like_for(bookmark)
-    likes.where(bookmark: bookmark).first
+  def liked(bookmark)
+    likes.where(bookmark_id: bookmark.id).last
   end
 
   def avatar_url(size)

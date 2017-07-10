@@ -141,8 +141,58 @@
   text-decoration: none;
 }
 
+.hfont {
+  color: darkgray;
+  font-size: 3rem;
+  font-weight: bold;
+  background-color: white;
+  text-decoration: none;
+}
+
+.hfont:hover {
+  color: darkgray;
+  background-color: white;
+  text-decoration: none;
+  text-shadow: 2px 2px lightgray;
+}
+
+.hfont:visited {
+  color: darkgray;
+  background-color: white;
+  text-decoration: none;
+}
+
+.jfont {
+  color: gray;
+  font-size: 3rem;
+  font-weight: bold;
+  background-color: white;
+  text-decoration: none;
+}
+
+.jfont:hover {
+  color: gray;
+  background-color: white;
+  text-decoration: none;
+  text-shadow: 2px 2px lightgray;
+}
+
+.jfont:visited {
+  color: g;
+  background-color: white;
+  text-decoration: none;
+}
+
+.grayfont {
+  color: gray;
+}
+
 .font1rem {
   font-size: 1rem;
+}
+
+.font1pointfive {
+  font-size: 1.5rem;
 }
 
 .nodec {
@@ -197,16 +247,27 @@
  margin-right: -15px;
 }
 
+.tmar5 {
+ margin-top: 5px;
+}
+
 .tmar15 {
  margin-top: 15px;
+}
+
+.tmar10{
+ margin-top: 10px;
 }
 
 .tmar25 {
  margin-top: 25px;
 }
+
 .tmar125 {
+
  margin-top: 125px;
 }
+
 .tmar150 {
  margin-top: 150px;
 }

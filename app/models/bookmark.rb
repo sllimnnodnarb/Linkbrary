@@ -5,11 +5,11 @@ class Bookmark < ActiveRecord::Base
 
   default_scope { order('created_at DESC') }
 
-  def like
+  def up_like
     likes.where(value: 1).count
   end
 
-  def dislike
+  def down_like
     likes.where(value: -1).count
   end
 
@@ -26,11 +26,7 @@ class Bookmark < ActiveRecord::Base
   private
 
   def create_like
-    user.likes.create(value: 1, post: self)
-  end
-
-  def create_favorite
-    Likes.create(bookmark: self, user: self.user)
-    LikeMailer.new_like(self).deliver_now
+    Like.create(bookmark: self, user: self.user)
+    #LikeMailer.new_bookmark(self).deliver_now
   end
 end

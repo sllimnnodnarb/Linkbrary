@@ -1,14 +1,12 @@
+
 <% if policy(Like.new).create? %>
-  <div>
-    <% if like = current_user.like_for(bookmark) %>
-      <%= image_tag bookmark.user.avatar_url(48), class: "gvtr" %>
-      <%= link_to [bookmark, like], class: 'btn btn-danger', method: :delete do %>
-        <i class="glyphicon glyphicon-thumbs-up-empty"> </i>&nbsp; Unlike
-      <% end %>
-    <% else %>
-      <%= link_to [bookmark, Like.new], class: 'btn btn-primary', method: :post do %>
-        <i class="glyphicon glyphicon-thumbs-up"> </i>&nbsp; Like
-      <% end %>
+  <% if like = current_user.liked(bookmark) %>
+    <%= link_to [bookmark, like], class: "nodec pull-left", method: :delete do %>
+      <i class="glyphicon glyphicon-thumbs-down hfont font2rem"> Unlike</i>
     <% end %>
-  </div>
+  <% else %>
+    <%= link_to [bookmark, Like.new],class: "nodec jfont pull-left", method: :post do %>
+    <i class="glyphicon glyphicon-thumbs-up jfont font2rem"> Like</i>
+    <% end %>
+  <% end %>
 <% end %>

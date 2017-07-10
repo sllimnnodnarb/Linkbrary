@@ -1,17 +1,16 @@
 <div class="layer2 tmar90 shadow pad50">
-  <h1 class="cfont"><%= @shelf.title %></h1>
+  <h1 class="cfont"><%= current_user.email %></h1>
   <table class="wid100per">
     <thead>
       <tr>
-        <th class="bline font2rem">Title</th>
+        <th class="bline font2rem">Bookmarks Added</th>
       </tr>
     </thead>
     <br>
     <tbody>
-      <td class="efont"><%= link_to '', new_shelf_bookmark_path(@shelf), class: "glyphicon glyphicon-plus pull-left efont font2rem tmar15 bmar15" %></td>
-      <% @shelf.bookmarks.each do |bookmark| %>
+      <% current_user.bookmarks.each do |bookmark| %>
         <tr class="tmar15 maxwid100">
-          <td class="pull-left tmar15 efont font2rem maxwid100 bmar25">
+          <td class="pull-left tmar15  maxwid100 bmar25">
             <%= link_to bookmark.url, bookmark.url, class: "efont font2rem bmar25", target: '_new' %><br>
             <i class="font1rem grayfont pull-right tmar5"><%= pluralize(bookmark.likes.count, 'like') %></i>
             <%= render partial: 'likes/like', class: "bmar25", locals: { bookmark: bookmark } %>
@@ -24,9 +23,5 @@
       <% end %>
     </tbody>
   </table>
-  <div class="bline tmar50">
-  </div>
-    <%= link_to 'Back', shelves_path, class: "efont font2rem tcent pull-left tmar15 posrel" %>
-    <%= link_to '', root_path, class: "glyphicon glyphicon-home gfont font2rem tmar25" %>
-  <br>
-</div>
+    <% @liked_bookmarks.each do |bookmark| %>
+    <% end %>
