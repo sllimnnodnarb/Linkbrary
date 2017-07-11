@@ -6,9 +6,7 @@ class User < ActiveRecord::Base
 
   before_save { self.email = email.downcase }
   before_save { self.role ||= :member }
-
-
-
+  
   has_many :shelves, dependent: :destroy
   has_many :bookmarks, dependent: :destroy
   has_many :likes, dependent: :destroy
