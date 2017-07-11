@@ -1,0 +1,27 @@
+<div class="layer2 tmar90 shadow pad50">
+  <h1 class="cfont"><%= current_user.email %></h1>
+  <table class="wid100per">
+    <thead>
+      <tr>
+        <th class="bline font2rem">Bookmarks Added</th>
+      </tr>
+    </thead>
+    <br>
+    <tbody>
+      <% current_user.bookmarks.each do |bookmark| %>
+        <tr class="tmar15 maxwid100">
+          <td class="pull-left tmar15  maxwid100 bmar25">
+            <%= link_to bookmark.url, bookmark.url, class: "efont font2rem bmar25", target: '_new' %><br>
+            <i class="font1rem grayfont pull-right tmar5"><%= pluralize(bookmark.likes.count, 'like') %></i>
+            <%= render partial: 'likes/like', class: "bmar25", locals: { bookmark: bookmark } %>
+          </td>
+
+            <td class="pull-right font2rem tmar15 efont"><%= link_to '', [bookmark.shelf, bookmark], method: :delete, data: { confirm: 'Are you sure?' }, class: "glyphicon glyphicon-trash font2rem gfont bmar15" %></td>
+            <td class="pull-right efont font2rem tmar15 maxwid100"><%= link_to '', edit_shelf_bookmark_path(bookmark.shelf, bookmark), class: "rpad25 efont glyphicon glyphicon-pencil font2rem" %></td>
+
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+    <% @liked_bookmarks.each do |bookmark| %>
+    <% end %>

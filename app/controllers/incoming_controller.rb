@@ -1,4 +1,4 @@
-class IncomingControllerController < ApplicationController
+class IncomingController < ApplicationController
 
   skip_before_action :verify_authenticity_token, only: [:create]
   skip_before_action :authenticate_user!

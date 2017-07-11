@@ -1,6 +1,6 @@
 class BookmarksController < ApplicationController
-  before_action :set_bookmark, except: [:index, :new, :create]
   before_action :set_shelf
+  before_action :set_bookmark, except: [:index, :new, :create]
   skip_before_action :verify_authenticity_token, only: [:create]
   skip_before_action :authenticate_user!
 
