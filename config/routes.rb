@@ -10,9 +10,8 @@ Rails.application.routes.draw do
 
   resources :bookmarks do
     resources :likes, only: [:index, :create, :destroy]
-end
+  end
 
-  get 'likes/index'
   get 'incoming_controller/create'
   post :incoming, to: 'incoming#create'
   get 'welcome/index'

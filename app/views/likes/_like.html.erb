@@ -1,6 +1,6 @@
 
 <% if policy(Like.new).create? %>
-  <% if like = current_user.liked(bookmark) %>
+  <% if like = current_user.like_for(bookmark) %>
     <%= link_to [bookmark, like], class: "nodec pull-left", method: :delete do %>
       <i class="glyphicon glyphicon-thumbs-down hfont font2rem"> Unlike</i>
     <% end %>

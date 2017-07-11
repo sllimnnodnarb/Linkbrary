@@ -46,6 +46,7 @@ class ShelvesController < ApplicationController
 
   def destroy
     @shelf.destroy
+    
     respond_to do |format|
       format.html { redirect_to shelves_url, notice: 'Shelf was successfully destroyed.' }
       format.json { head :no_content }

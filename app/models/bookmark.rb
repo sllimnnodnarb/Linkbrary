@@ -26,7 +26,7 @@ class Bookmark < ActiveRecord::Base
   private
 
   def create_like
-    Like.create(bookmark: self, user: self.user)
+    user.likes.create(bookmark: self)
     #LikeMailer.new_bookmark(self).deliver_now
   end
 end
