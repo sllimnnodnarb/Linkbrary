@@ -6,11 +6,11 @@ class User < ActiveRecord::Base
 
   before_save { self.email = email.downcase }
   before_save { self.role ||= :member }
-  
+
   has_many :shelves, dependent: :destroy
   has_many :bookmarks, dependent: :destroy
   has_many :likes, dependent: :destroy
-  has_many :liked_bookmarks, through: :likes, source: :bookmark
+  has_many :liked_bookmarks, through: :likes, source: :bookmark, dependent: :destroy
 
   enum role: [:member, :admin]
 

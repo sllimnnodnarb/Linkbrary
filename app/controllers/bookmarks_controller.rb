@@ -1,7 +1,7 @@
 class BookmarksController < ApplicationController
   before_action :set_shelf
   before_action :set_bookmark, except: [:index, :new, :create]
-  skip_before_action :verify_authenticity_token, only: [:create]
+  skip_before_action :verify_authenticity_token, only: [:create, :destroy]
   skip_before_action :authenticate_user!
 
   def index
@@ -49,7 +49,7 @@ class BookmarksController < ApplicationController
   def destroy
     @bookmark.destroy
     respond_to do |format|
-      format.html { redirect_to @shelf, notice: 'Bookmark was successfully destroyed.' }
+      format.html { redirect_to @bookmark.shelf, notice: 'Bookmark was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

@@ -1,7 +1,5 @@
 class ShelvesController < ApplicationController
-  skip_before_action :verify_authenticity_token, only: [:create, :destroy]
-  skip_before_action :authenticate_user!
-  skip_before_action :set_shelf
+  before_action :set_shelf, only: [:show, :edit, :update]
 
   def index
     @shelves = Shelf.all
@@ -16,6 +14,7 @@ class ShelvesController < ApplicationController
   end
 
   def edit
+    @shelf = Shelf.find(params[:id])
   end
 
   def create
@@ -46,7 +45,7 @@ class ShelvesController < ApplicationController
 
   def destroy
     @shelf.destroy
-    
+    authorized_for_update
     respond_to do |format|
       format.html { redirect_to shelves_url, notice: 'Shelf was successfully destroyed.' }
       format.json { head :no_content }
