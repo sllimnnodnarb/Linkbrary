@@ -1,5 +1,5 @@
 class ShelvesController < ApplicationController
-  before_action :set_shelf, only: [:show, :edit, :update]
+  before_action :set_shelf, only: [:show, :edit, :update, :destroy]
 
   def index
     @shelves = Shelf.all
@@ -18,8 +18,7 @@ class ShelvesController < ApplicationController
   end
 
   def create
-    @shelf = Shelf.new(shelf_params)
-    @shelf.user = current_user
+    @shelf = current_user.shelves.new(shelf_params)
     respond_to do |format|
       if @shelf.save
         format.html { redirect_to @shelf, notice: 'Shelf was successfully created.' }
@@ -45,7 +44,6 @@ class ShelvesController < ApplicationController
 
   def destroy
     @shelf.destroy
-    authorized_for_update
     respond_to do |format|
       format.html { redirect_to shelves_url, notice: 'Shelf was successfully destroyed.' }
       format.json { head :no_content }

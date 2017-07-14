@@ -5,6 +5,7 @@
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
   <link href="https://fonts.googleapis.com/css?family=Jaldi|League+Script|Montserrat|Playfair+Display+SC|Quintessential" rel="stylesheet">
+  <link rel="stylesheet" href="animate.min.css">
   <% if flash[:notice] %>
     <div class="alert alert-success">
       <button type="button" class="close" data-dismiss="alert">&times;</button>
@@ -41,7 +42,7 @@
           <li role="presentation">
             <%= link_to "Settings", edit_user_registration_path, class: "tcent cfont" %>
           </li>
-        <% end %>      
+        <% end %>
         <li role="presentation">
           <% if user_signed_in? %>
             <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "tcent cfont" %>
